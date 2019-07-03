@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 
     # local Apps
     'Authentication',
-
+    'Post',
     # Third Party
     'rest_framework',
     'rest_auth',

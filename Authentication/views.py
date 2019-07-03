@@ -27,7 +27,6 @@ class CustomRegisterView(RegisterView):
 
 
 class UserProfileView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = User
+    queryset = User.objects.all()
     serializer_class = UserProfileSerializer
-    permission_classes = [IsAuthenticated, ]
-    
+    permission_classes = [IsAuthenticated,]
