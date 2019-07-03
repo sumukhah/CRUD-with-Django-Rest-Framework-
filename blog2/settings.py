@@ -27,25 +27,25 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    #local Apps
+    # local Apps
     'Authentication',
 
-    #Third Party
+    # Third Party
     'rest_framework',
     'rest_auth',
     'rest_framework.authtoken',
-    #social auth -allauth
+    # social auth -allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
-    #Registeration-Rest-auth
+    # Registeration-Rest-auth
     'rest_auth.registration',
-    #User Login
+    # User Login
 
-    
+
 
 ]
 SITE_ID = 1
@@ -91,20 +91,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-# AUTH_PASSWORD_VALIDATORS = [
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-#     },
-# ]
+
 
 LANGUAGE_CODE = 'en-us'
 
@@ -125,9 +112,13 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'Authentication.User'
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-    "REGISTER_SERIALIZER": "Authentication.serializers.CustomRegisterSerializer",
+    "REGISTER_SERIALIZER":
+    "Authentication.serializers.CustomRegisterSerializer",
+    
 }
-
+REST_AUTH_SERIALIZERS = {
+    "LOGIN_SERIALIZER" : 'Authentication.serializers.CustomLoginSerializer',
+}
 # AUTHENTICATION_BACKEND = [
 #     'allauth.account.auth_backends.AuthenticationBackend'
 # ]
@@ -137,4 +128,3 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-

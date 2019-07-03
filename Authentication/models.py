@@ -3,20 +3,22 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 
 
 class UserManager(BaseUserManager):
-    
+
     '''creates new user instance'''
+
     def create_user(self, email, password=None, **extra_fields):
-        
+
         if not email:
             raise ValueError('User should have an Email, or Create One')
-        
+
         user = self.model(email=self.normalize_email(email), **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
     '''Creates A super User'''
-    def create_superuser(self, email,password=None, **extra_fields):
+
+    def create_superuser(self, email, password=None, **extra_fields):
 
         if not email:
             raise ValueError('User should have an Email, or Create One')
@@ -29,11 +31,15 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(max_length=254, unique=True, verbose_name='email adress')
+    email = models.EmailField(
+        max_length=254, unique=True, verbose_name='email adress')
     name = models.CharField(max_length=50, blank=True, null=True)
     active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
     admin = models.BooleanField(default=False)
+    avatar = models.ImageField(null=True, blank=True)
+    about = models.TextField(null=True, blank=True)
+    joined_date = models.DateField(auto_now=True)
 
     objects = UserManager()
 
@@ -53,5 +59,5 @@ class User(AbstractBaseUser, PermissionsMixin):
         return True
 
     class Meta:
-        verbose_name = 'Email'
-        verbose_name_plural = 'Emails'
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
