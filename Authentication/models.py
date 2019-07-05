@@ -39,7 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     admin = models.BooleanField(default=False)
     avatar = models.ImageField(null=True, blank=True)
     about = models.TextField(null=True, blank=True)
-    joined_date = models.DateField(auto_now=True)
+    joined_date = models.DateField(auto_now_add=True)
 
     objects = UserManager()
 
