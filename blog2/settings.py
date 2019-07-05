@@ -114,10 +114,9 @@ AUTH_USER_MODEL = 'Authentication.User'
 REST_AUTH_REGISTER_SERIALIZERS = {
     "REGISTER_SERIALIZER":
     "Authentication.serializers.CustomRegisterSerializer",
-    
 }
 REST_AUTH_SERIALIZERS = {
-    "LOGIN_SERIALIZER" : 'Authentication.serializers.CustomLoginSerializer',
+    "LOGIN_SERIALIZER": 'Authentication.serializers.CustomLoginSerializer',
 }
 # AUTHENTICATION_BACKEND = [
 #     'allauth.account.auth_backends.AuthenticationBackend'
@@ -128,3 +127,8 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'Post.pagination.CustomPagination',
+    'PAGE_SIZE': 10
+}

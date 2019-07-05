@@ -7,6 +7,7 @@ from rest_framework import serializers
 class CustomRegisterSerializer(RegisterSerializer):
     username = None
     name = serializers.CharField(required=True)
+
     class Meta:
         model = User
         fields = ('name')
@@ -17,9 +18,10 @@ class CustomRegisterSerializer(RegisterSerializer):
 
 class CustomLoginSerializer(LoginSerializer):
     username = None
+
     class Meta:
         model = User
-        fields = ('name','password')
+        fields = ('name', 'password')
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
