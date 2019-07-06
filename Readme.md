@@ -16,7 +16,7 @@ How to run this?
 
                                 > python3 manage.py runserver
 
- <Then open browser and go to 'http://127.0.0.1:8000/' >
+>><Then open browser and go to 'http://127.0.0.1:8000/' >
 
   " http://127.0.0.1:8000/ " is the root of project. Then you can navigate to 
                         "http://127.0.0.1:8000/authentication/"
