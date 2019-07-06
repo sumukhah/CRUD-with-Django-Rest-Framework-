@@ -29,7 +29,7 @@
  * Better if you go to "http://127.0.0.1:8000/authentication/register"
  * After register navigate " http://127.0.0.1:8000/authentication/login "
 
- >> Then you are an Authenticated User
+ * >> Then you are an Authenticated User
 
  * visit "http://127.0.0.1:8000/newslist"
 
