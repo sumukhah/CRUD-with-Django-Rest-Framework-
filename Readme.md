@@ -1,4 +1,4 @@
-How to run this?
+#How to run this?
 
  <Open the terminal/shell and insert>
 
@@ -18,10 +18,12 @@ How to run this?
 
 >><Then open browser and go to 'http://127.0.0.1:8000/' >
 
-  " http://127.0.0.1:8000/ " is the root of project. Then you can navigate to 
-                        "http://127.0.0.1:8000/authentication/"
+  " http://127.0.0.1:8000/ " is the root of project.
+
+*  Then you can navigate to 
+    "http://127.0.0.1:8000/authentication/"
                         or 
-                        "http://127.0.0.1:8000/news"
+    "http://127.0.0.1:8000/news"
 
 
   Better if you go to "http://127.0.0.1:8000/authentication/register"
