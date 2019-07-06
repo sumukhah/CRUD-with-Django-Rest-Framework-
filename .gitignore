@@ -1,3 +1,4 @@
-env
-.vscode
+env/
+vscode/
+db.sqlite3
 

@@ -33,9 +33,18 @@ class PostListView(CreateModelMixin, ListAPIView):
 
 
 class PostDetailView(RetrieveUpdateDestroyAPIView):
-    queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = [IsOwnerOrReadOnly, ]
+
+    def get_queryset(self):
+        try:
+            Post.objects.get(pk=self.kwargs['pk'])
+        except:
+            content = {
+                'status': 'Post Does Not Exist'
+            }
+            return Response(content, status=status.HTTP_400_BAD_REQUEST)
+        return Post.objects.all()
 
 
 class CommentView(CreateModelMixin, ListAPIView):

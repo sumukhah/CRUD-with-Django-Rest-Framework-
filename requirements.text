@@ -1,0 +1,5 @@
+Django              2.2.2    
+django-allauth      0.39.1   
+django-rest-auth    0.9.5    
+djangorestframework 3.9.4    
+Pillow              6.0.0    
